@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppTable from "@/components/AppTable.vue";
+import AppTable from "@/components/AppTable/index.vue";
 </script>
 
 <template>

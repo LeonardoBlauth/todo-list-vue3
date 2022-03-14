@@ -30,7 +30,7 @@ const view = useViewStore();
               ]"
               to="/"
               @click="view.setView('all')"
-              >All</RouterLink
+              ><small>ALL</small></RouterLink
             >
           </li>
           <li class="nav-item">
@@ -42,7 +42,7 @@ const view = useViewStore();
               ]"
               to="/completed"
               @click="view.setView('completed')"
-              >Completed</RouterLink
+              ><small>COMPLETED</small></RouterLink
             >
           </li>
           <li class="nav-item">
@@ -54,7 +54,7 @@ const view = useViewStore();
               ]"
               to="/incompleted"
               @click="view.setView('incompleted')"
-              >Incompleted</RouterLink
+              ><small>INCOMPLETED</small></RouterLink
             >
           </li>
         </ul>

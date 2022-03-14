@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { CUSTOMERS } from "@/constatnts";
-import AppBadge from "./AppBadge.vue";
 </script>
 
 <script lang="ts">
@@ -10,13 +9,11 @@ import Calendar from "primevue/calendar";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Dropdown from "primevue/dropdown";
-import ProgressBar from "primevue/progressbar";
-import Slider from "primevue/slider";
+import TableBadges from "./TableBadges.vue";
 export default {
   data() {
     return {
       customers: CUSTOMERS,
-      selectedTasks: null,
       filters: {
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
         name: {
@@ -33,10 +30,13 @@ export default {
           operator: FilterOperator.OR,
           constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
         },
-        activity: { value: null, matchMode: FilterMatchMode.BETWEEN },
-        verified: { value: null, matchMode: FilterMatchMode.EQUALS },
+        category: {
+          operator: FilterOperator.AND,
+          constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
+        },
       },
       loading: true,
+      categories: ["Home", "School", "Helth", "Leisure"],
       statuses: [
         "unqualified",
         "qualified",
@@ -82,9 +82,15 @@ export default {
           operator: FilterOperator.OR,
           constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
         },
-        activity: { value: null, matchMode: FilterMatchMode.BETWEEN },
-        verified: { value: null, matchMode: FilterMatchMode.EQUALS },
+        category: {
+          operator: FilterOperator.AND,
+          constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
+        },
       };
+    },
+
+    verifiedIconColor(verified: boolean) {
+      return verified ? "green" : "red";
     },
   },
 };
@@ -99,7 +105,6 @@ export default {
     :rows="10"
     dataKey="id"
     :rowHover="true"
-    v-model:selection="selectedTasks"
     v-model:filters="filters"
     filterDisplay="menu"
     :loading="loading"
@@ -112,16 +117,16 @@ export default {
       'representative.name',
       'status',
     ]"
-    responsiveLayout="scroll"
+    responsiveLayout="stack"
+    breakpoint="960px"
   >
     <div
-      class="flex flex-column md:flex-row md:justify-content-between md:align-items-center bg-white mb-3"
+      class="flex flex-row justify-content-between align-items-center bg-white mb-3"
     >
       <h5 class="m-0 fw-bold">Tasks</h5>
       <Button
         type="button"
         icon="pi pi-filter-slash"
-        label="Clear"
         class="p-button-outlined p-button-danger"
         @click="clearFilter()"
       />
@@ -142,11 +147,76 @@ export default {
       </template>
     </Column>
     <Column
+      field="category"
+      header="Category"
+      sortable
+      :showFilterMatchModes="false"
+      :filterMenuStyle="{ width: '14rem' }"
+      bodyStyle="text-align: center"
+    >
+      <template #body="{ data }">
+        <span class="task-badge">{{ data.category }}</span>
+      </template>
+      <template #filter="{ filterModel }">
+        <Dropdown
+          v-model="filterModel.value"
+          :options="categories"
+          placeholder="Any"
+          class="p-column-filter"
+          :showClear="true"
+        >
+          <template #value="slotProps">
+            <span class="task-badge">{{ slotProps.value }}</span>
+          </template>
+          <template #option="slotProps">
+            <span class="task-badge">{{ slotProps.option }}</span>
+          </template>
+        </Dropdown>
+      </template>
+    </Column>
+    <Column
+      field="status"
+      header="Status"
+      sortable
+      :showFilterMatchModes="false"
+      :filterMenuStyle="{ width: '14rem' }"
+      bodyStyle="text-align: center"
+    >
+      <template #body="{ data }">
+        <TableBadges
+          :badgeClass="'task-badge status-' + data.status"
+          :label="data.status"
+        />
+      </template>
+      <!-- <template #filter="{ filterModel }">
+        <Dropdown
+          v-model="filterModel.value"
+          :options="statuses"
+          placeholder="Any"
+          class="p-column-filter"
+          :showClear="true"
+        >
+          <template #value="slotProps">
+            <TableBadges
+              :badgeClass="'task-badge status-' + slotProps.value"
+              :label="slotProps.value"
+            />
+          </template>
+          <template #option="slotProps">
+            <TableBadges
+              :badgeClass="'task-badge status-' + slotProps.option"
+              :label="slotProps.option"
+            />
+          </template>
+        </Dropdown>
+      </template> -->
+    </Column>
+    <Column
       field="date"
       header="Date"
       sortable
       dataType="date"
-      bodyStyle="text-align: center;"
+      bodyStyle="text-align: center"
     >
       <template #body="{ data }">
         {{ formatDate(data.date) }}
@@ -160,62 +230,31 @@ export default {
       </template>
     </Column>
     <Column
-      field="status"
-      header="Status"
-      sortable
-      :filterMenuStyle="{ width: '14rem' }"
-      bodyStyle="text-align: center;"
+      field="verified"
+      header="Verified"
+      dataType="boolean"
+      bodyStyle="text-align: center"
     >
       <template #body="{ data }">
-        <AppBadge :label="data.status"></AppBadge>
-        <!-- <span :class="'task-badge status-' + data.status">{{
-          data.status
-        }}</span> -->
-      </template>
-      <template #filter="{ filterModel }">
-        <Dropdown
-          v-model="filterModel.value"
-          :options="statuses"
-          placeholder="Any"
-          class="p-column-filter"
-          :showClear="true"
-        >
-          <template #value="slotProps">
-            <span :class="'task-badge status-' + slotProps.value">{{
-              slotProps.value
-            }}</span>
-          </template>
-          <template #option="slotProps">
-            <span :class="'task-badge status-' + slotProps.option">{{
-              slotProps.option
-            }}</span>
-          </template>
-        </Dropdown>
+        <i
+          class="pi"
+          :class="{
+            'true-icon pi-check-circle': data.verified,
+            'false-icon pi-times-circle': !data.verified,
+          }"
+          :style="{
+            color: verifiedIconColor(data.verified),
+          }"
+        ></i>
       </template>
     </Column>
-    <Column
-      field="activity"
-      header="Priority"
-      sortable
-      :showFilterMatchModes="false"
-    >
-      <template #body="{ data }">
-        <ProgressBar :value="data.activity" :showValue="false" />
-      </template>
-      <template #filter="{ filterModel }">
-        <Slider v-model="filterModel.value" range class="m-3"></Slider>
-        <div class="flex align-items-center justify-content-center px-2">
-          <span>{{ filterModel.value ? filterModel.value[0] : 0 }}</span>
-          <span>{{ filterModel.value ? filterModel.value[1] : 100 }}</span>
-        </div>
-      </template>
-    </Column>
-    <Column
-      headerStyle="min-width: 4rem; text-align: center"
-      bodyStyle="text-align: center; overflow: visible"
-    >
+    <Column header="Options" bodyStyle="text-align: center; overflow: visible">
       <template #body>
-        <Button type="button" icon="pi pi-cog"></Button>
+        <Button
+          type="button"
+          icon="pi pi-cog"
+          class="p-button-rounded p-button-secondary p-button-flat"
+        ></Button>
       </template>
     </Column>
   </DataTable>
@@ -224,13 +263,6 @@ export default {
 <style lang="scss" scoped>
 ::v-deep(.p-paginator) .p-paginator-current {
   margin-left: auto;
-}
-::v-deep(.p-progressbar) {
-  height: 0.5rem;
-  background-color: #d8dadc;
-}
-::v-deep(.p-progressbar) .p-progressbar-value {
-  background-color: #607d8b;
 }
 ::v-deep(.p-datepicker) {
   min-width: 25rem;
@@ -255,5 +287,14 @@ export default {
 }
 ::v-deep(.p-datatable.p-datatable-task) .p-dropdown-label:not(.p-placeholder) {
   text-transform: uppercase;
+}
+
+.task-badge {
+  border-radius: 2px;
+  padding: 0.25em 0.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.3px;
 }
 </style>

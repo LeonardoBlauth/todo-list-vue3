@@ -5,6 +5,7 @@ type Customer = {
   company: string;
   date: Date;
   status: string;
+  category: string;
   verified: boolean;
   activity: string | number;
   representative: object;
@@ -22,6 +23,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Benton, John B Jr",
     date: new Date(2015, 9, 13),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 17,
     representative: {
@@ -40,6 +42,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Chanay, Jeffrey A Esq",
     date: new Date(2019, 2, 9),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 0,
     representative: {
@@ -58,6 +61,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Chemel, James L Cpa",
     date: new Date(2017, 5, 13),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 63,
     representative: {
@@ -76,6 +80,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Feltz Printing Service",
     date: new Date(2020, 9, 15),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 37,
     representative: {
@@ -94,6 +99,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Printing Dimensions",
     date: new Date(2016, 5, 20),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 33,
     representative: {
@@ -112,6 +118,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Chapman, Ross E Esq",
     date: new Date(2018, 2, 16),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 68,
     representative: {
@@ -130,6 +137,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Morlong Associates",
     date: new Date(2018, 2, 19),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 54,
     representative: {
@@ -148,6 +156,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Commercial Press",
     date: new Date(2019, 8, 13),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 69,
     representative: {
@@ -166,6 +175,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Truhlar And Truhlar Attys",
     date: new Date(2018, 11, 21),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 76,
     representative: {
@@ -184,6 +194,7 @@ export const CUSTOMERS: Customer[] = [
     company: "King, Christopher A Esq",
     date: new Date(2015, 7, 7),
     status: "proposal",
+    category: "Home",
     verified: false,
     activity: 3,
     representative: {
@@ -202,6 +213,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Dorl, James J Esq",
     date: new Date(2018, 11, 7),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 38,
     representative: {
@@ -220,6 +232,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Rangoni Of Florence",
     date: new Date(2017, 3, 11),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 87,
     representative: {
@@ -238,6 +251,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Feiner Bros",
     date: new Date(2015, 10, 20),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 80,
     representative: {
@@ -256,6 +270,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Buckley Miller & Wright",
     date: new Date(2016, 7, 25),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 59,
     representative: {
@@ -274,6 +289,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Rousseaux, Michael Esq",
     date: new Date(2019, 6, 25),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 90,
     representative: {
@@ -292,6 +308,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Century Communications",
     date: new Date(2017, 12, 12),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 52,
     representative: {
@@ -310,6 +327,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Bolton, Wilbur Esq",
     date: new Date(2018, 7, 4),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 31,
     representative: {
@@ -328,6 +346,7 @@ export const CUSTOMERS: Customer[] = [
     company: "T M Byxbee Company Pc",
     date: new Date(2020, 2, 27),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 48,
     representative: {
@@ -346,6 +365,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Farmers Insurance Group",
     date: new Date(2017, 12, 21),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 16,
     representative: {
@@ -364,6 +384,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Post Box Services Plus",
     date: new Date(2016, 1, 4),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 19,
     representative: {
@@ -382,6 +403,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Sport En Art",
     date: new Date(2016, 10, 21),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 100,
     representative: {
@@ -400,6 +422,7 @@ export const CUSTOMERS: Customer[] = [
     company: "C 4 Network Inc",
     date: new Date(2017, 3, 24),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 72,
     representative: {
@@ -418,6 +441,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ingalls, Donald R Esq",
     date: new Date(2017, 4, 15),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 94,
     representative: {
@@ -436,6 +460,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Franklin, Peter L Esq",
     date: new Date(2017, 3, 11),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 56,
     representative: {
@@ -454,6 +479,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Wtlz Power 107 Fm",
     date: new Date(2018, 3, 27),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 7,
     representative: {
@@ -472,6 +498,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ledecky, David Esq",
     date: new Date(2016, 2, 20),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 1,
     representative: {
@@ -490,6 +517,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Professional Image Inc",
     date: new Date(2018, 6, 24),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 26,
     representative: {
@@ -508,6 +536,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Sider, Donald C Esq",
     date: new Date(2016, 9, 24),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 76,
     representative: {
@@ -526,6 +555,7 @@ export const CUSTOMERS: Customer[] = [
     company: "U Pull It",
     date: new Date(2020, 4, 11),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 7,
     representative: {
@@ -544,6 +574,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Clark, Richard Cpa",
     date: new Date(2018, 4, 11),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 81,
     representative: {
@@ -562,6 +593,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Moskowitz, Barry S",
     date: new Date(2016, 6, 11),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 56,
     representative: {
@@ -580,6 +612,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Cascade Realty Advisors Inc",
     date: new Date(2017, 8, 2),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 94,
     representative: {
@@ -598,6 +631,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Knwz Newsradio",
     date: new Date(2018, 6, 6),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 68,
     representative: {
@@ -616,6 +650,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Giampetro, Anthony D",
     date: new Date(2019, 8, 8),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 85,
     representative: {
@@ -634,6 +669,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Milford Enterprises Inc",
     date: new Date(2018, 5, 19),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 46,
     representative: {
@@ -652,6 +688,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Mosocco, Ronald A",
     date: new Date(2015, 2, 12),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 32,
     representative: {
@@ -670,6 +707,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Tri State Refueler Co",
     date: new Date(2018, 4, 25),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 77,
     representative: {
@@ -688,6 +726,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Parkway Company",
     date: new Date(2016, 2, 27),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 66,
     representative: {
@@ -706,6 +745,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Fbs Business Finance",
     date: new Date(2019, 9, 17),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 25,
     representative: {
@@ -724,6 +764,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Eder Assocs Consltng Engrs Pc",
     date: new Date(2016, 12, 3),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 51,
     representative: {
@@ -742,6 +783,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Tri M Tool Inc",
     date: new Date(2017, 12, 15),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 49,
     representative: {
@@ -760,6 +802,7 @@ export const CUSTOMERS: Customer[] = [
     company: "International Eyelets Inc",
     date: new Date(2017, 2, 2),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 5,
     representative: {
@@ -778,6 +821,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Rapid Trading Intl",
     date: new Date(2018, 12, 25),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 100,
     representative: {
@@ -796,6 +840,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Abc Enterprises Inc",
     date: new Date(2018, 4, 10),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 71,
     representative: {
@@ -814,6 +859,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Cindy Turner Associates",
     date: new Date(2018, 5, 6),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 54,
     representative: {
@@ -832,6 +878,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Stanton, James D Esq",
     date: new Date(2019, 7, 10),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 93,
     representative: {
@@ -850,6 +897,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Grace Pastries Inc",
     date: new Date(2018, 2, 19),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 97,
     representative: {
@@ -868,6 +916,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Schroer, Gene E Esq",
     date: new Date(2019, 11, 27),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 80,
     representative: {
@@ -886,6 +935,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Knights Inn",
     date: new Date(2018, 11, 24),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 63,
     representative: {
@@ -904,6 +954,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Bollinger Mach Shp & Shipyard",
     date: new Date(2018, 4, 19),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 92,
     representative: {
@@ -922,6 +973,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Orinda News",
     date: new Date(2019, 9, 6),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 72,
     representative: {
@@ -940,6 +992,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ballard Spahr Andrews",
     date: new Date(2018, 4, 26),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 36,
     representative: {
@@ -958,6 +1011,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Lowy Limousine Service",
     date: new Date(2018, 4, 12),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 31,
     representative: {
@@ -976,6 +1030,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Vicon Corporation",
     date: new Date(2018, 1, 24),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 89,
     representative: {
@@ -994,6 +1049,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Rossi, Michael M",
     date: new Date(2017, 4, 17),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 27,
     representative: {
@@ -1012,6 +1068,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Northwest Publishing",
     date: new Date(2019, 4, 14),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 27,
     representative: {
@@ -1030,6 +1087,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Branford Wire & Mfg Co",
     date: new Date(2019, 9, 9),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 79,
     representative: {
@@ -1048,6 +1106,7 @@ export const CUSTOMERS: Customer[] = [
     company: "East Coast Marketing",
     date: new Date(2017, 2, 18),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 39,
     representative: {
@@ -1066,6 +1125,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Wye Technologies Inc",
     date: new Date(2020, 10, 5),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 55,
     representative: {
@@ -1084,6 +1144,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Healy, George W Iv",
     date: new Date(2018, 9, 28),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 79,
     representative: {
@@ -1102,6 +1163,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Alpenlite Inc",
     date: new Date(2016, 6, 16),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 49,
     representative: {
@@ -1120,6 +1182,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Hubbard, Bruce Esq",
     date: new Date(2017, 5, 25),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 87,
     representative: {
@@ -1138,6 +1201,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Arthur A Oliver & Son Inc",
     date: new Date(2020, 5, 9),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 5,
     representative: {
@@ -1156,6 +1220,7 @@ export const CUSTOMERS: Customer[] = [
     company: "George Jessop Carter Jewelers",
     date: new Date(2019, 9, 7),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 77,
     representative: {
@@ -1174,6 +1239,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Schultz, Thomas C Md",
     date: new Date(2015, 8, 10),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 94,
     representative: {
@@ -1192,6 +1258,7 @@ export const CUSTOMERS: Customer[] = [
     company: "H H H Enterprises Inc",
     date: new Date(2018, 3, 20),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 25,
     representative: {
@@ -1210,6 +1277,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Hawaiian King Hotel",
     date: new Date(2020, 3, 3),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 96,
     representative: {
@@ -1228,6 +1296,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Killion Industries",
     date: new Date(2018, 9, 18),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 38,
     representative: {
@@ -1246,6 +1315,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Robinson, William J Esq",
     date: new Date(2019, 6, 8),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 49,
     representative: {
@@ -1264,6 +1334,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Private Properties",
     date: new Date(2018, 12, 6),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 16,
     representative: {
@@ -1282,6 +1353,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Rowley Schlimgen Inc",
     date: new Date(2017, 4, 5),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 25,
     representative: {
@@ -1300,6 +1372,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Forging Specialties",
     date: new Date(2015, 2, 2),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 16,
     representative: {
@@ -1318,6 +1391,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Smits, Patricia Garity",
     date: new Date(2018, 8, 17),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 85,
     representative: {
@@ -1336,6 +1410,7 @@ export const CUSTOMERS: Customer[] = [
     company: "H Lee Leonard Attorney At Law",
     date: new Date(2018, 9, 8),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 92,
     representative: {
@@ -1354,6 +1429,7 @@ export const CUSTOMERS: Customer[] = [
     company: "A K Construction Co",
     date: new Date(2018, 11, 13),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 22,
     representative: {
@@ -1372,6 +1448,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ambelang, Jessica M Md",
     date: new Date(2019, 8, 18),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 64,
     representative: {
@@ -1390,6 +1467,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Q A Service",
     date: new Date(2015, 4, 2),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 80,
     representative: {
@@ -1408,6 +1486,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Wood & Whitacre Contractors",
     date: new Date(2017, 9, 15),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 70,
     representative: {
@@ -1426,6 +1505,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Mark Iv Press Ltd",
     date: new Date(2017, 3, 27),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 16,
     representative: {
@@ -1444,6 +1524,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Museum Of Science & Industry",
     date: new Date(2017, 6, 1),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 90,
     representative: {
@@ -1462,6 +1543,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Garrison Ind",
     date: new Date(2017, 3, 14),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 96,
     representative: {
@@ -1480,6 +1562,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Saronix Nymph Products",
     date: new Date(2018, 7, 9),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 77,
     representative: {
@@ -1498,6 +1581,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Smc Inc",
     date: new Date(2018, 9, 11),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 46,
     representative: {
@@ -1516,6 +1600,7 @@ export const CUSTOMERS: Customer[] = [
     company: "E A I Electronic Assocs Inc",
     date: new Date(2017, 11, 12),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 83,
     representative: {
@@ -1534,6 +1619,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Conte, Christopher A Esq",
     date: new Date(2016, 3, 1),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 83,
     representative: {
@@ -1552,6 +1638,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Anker Law Office",
     date: new Date(2016, 5, 21),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 49,
     representative: {
@@ -1570,6 +1657,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Beutelschies & Company",
     date: new Date(2016, 1, 22),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 34,
     representative: {
@@ -1588,6 +1676,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Fligg, Kenneth I Jr",
     date: new Date(2016, 7, 26),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 64,
     representative: {
@@ -1606,6 +1695,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Sharp, J Daniel Esq",
     date: new Date(2020, 7, 24),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 51,
     representative: {
@@ -1624,6 +1714,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Assink, Anne H Esq",
     date: new Date(2019, 11, 10),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 11,
     representative: {
@@ -1642,6 +1733,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Jewel My Shop Inc",
     date: new Date(2016, 6, 5),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 64,
     representative: {
@@ -1660,6 +1752,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Chinese Translation Resources",
     date: new Date(2016, 2, 28),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 44,
     representative: {
@@ -1678,6 +1771,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Stevens, Charles T",
     date: new Date(2018, 12, 13),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 62,
     representative: {
@@ -1696,6 +1790,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Mclaughlin, Luther W Cpa",
     date: new Date(2017, 6, 16),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 79,
     representative: {
@@ -1714,6 +1809,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Tree Musketeers",
     date: new Date(2019, 2, 17),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 50,
     representative: {
@@ -1732,6 +1828,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Springfield Div Oh Edison Co",
     date: new Date(2019, 11, 26),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 84,
     representative: {
@@ -1750,6 +1847,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Logan Memorial Hospital",
     date: new Date(2016, 7, 6),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 88,
     representative: {
@@ -1768,6 +1866,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Kelly, Charles G Esq",
     date: new Date(2019, 10, 2),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 44,
     representative: {
@@ -1786,6 +1885,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Industrial Paper Shredders Inc",
     date: new Date(2018, 7, 5),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 7,
     representative: {
@@ -1804,6 +1904,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Beck Horizon Builders",
     date: new Date(2018, 5, 14),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 99,
     representative: {
@@ -1822,6 +1923,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Porto Cayo At Hawks Cay",
     date: new Date(2018, 3, 14),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 0,
     representative: {
@@ -1840,6 +1942,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Pacific Grove Museum Ntrl Hist",
     date: new Date(2018, 9, 23),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 3,
     representative: {
@@ -1858,6 +1961,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Bender & Hatley Pc",
     date: new Date(2018, 4, 10),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 88,
     representative: {
@@ -1876,6 +1980,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Di Cristina J & Son",
     date: new Date(2017, 9, 18),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 92,
     representative: {
@@ -1894,6 +1999,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Green Goddess",
     date: new Date(2017, 8, 19),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 19,
     representative: {
@@ -1912,6 +2018,7 @@ export const CUSTOMERS: Customer[] = [
     company: "American Arts & Graphics",
     date: new Date(2020, 6, 18),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 21,
     representative: {
@@ -1930,6 +2037,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Opryland Hotel",
     date: new Date(2016, 11, 18),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 97,
     representative: {
@@ -1948,6 +2056,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Marking Devices Pubg Co",
     date: new Date(2017, 6, 25),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 27,
     representative: {
@@ -1966,6 +2075,7 @@ export const CUSTOMERS: Customer[] = [
     company: "W Tc Industries Inc",
     date: new Date(2019, 2, 16),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 35,
     representative: {
@@ -1984,6 +2094,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Whitehall Robbins Labs Divsn",
     date: new Date(2018, 3, 11),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 81,
     representative: {
@@ -2002,6 +2113,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Sampler",
     date: new Date(2017, 10, 15),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 54,
     representative: {
@@ -2020,6 +2132,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Juno Chefs Incorporated",
     date: new Date(2017, 3, 17),
     status: "proposal",
+    category: "Home",
     verified: false,
     activity: 31,
     representative: {
@@ -2038,6 +2151,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Carroccio, A Thomas Esq",
     date: new Date(2017, 4, 6),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 28,
     representative: {
@@ -2056,6 +2170,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Stanley, Richard L Esq",
     date: new Date(2019, 2, 3),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 45,
     representative: {
@@ -2074,6 +2189,7 @@ export const CUSTOMERS: Customer[] = [
     company: "K Cs Cstm Mouldings Windows",
     date: new Date(2016, 9, 22),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 34,
     representative: {
@@ -2092,6 +2208,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Comfort Inn",
     date: new Date(2017, 9, 27),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 36,
     representative: {
@@ -2110,6 +2227,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Windsor, James L Esq",
     date: new Date(2017, 6, 25),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 69,
     representative: {
@@ -2128,6 +2246,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Jackson Shields Yeiser",
     date: new Date(2016, 7, 13),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 55,
     representative: {
@@ -2146,6 +2265,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Box, J Calvin Esq",
     date: new Date(2018, 9, 13),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 1,
     representative: {
@@ -2164,6 +2284,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Custom Engineering Inc",
     date: new Date(2017, 9, 11),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 8,
     representative: {
@@ -2182,6 +2303,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Bresler Eitel Framg Gllry Ltd",
     date: new Date(2019, 7, 6),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 50,
     representative: {
@@ -2200,6 +2322,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Carol, Drake Sparks Esq",
     date: new Date(2018, 5, 22),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 77,
     representative: {
@@ -2218,6 +2341,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Biltmore Investors Bank",
     date: new Date(2017, 7, 18),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 65,
     representative: {
@@ -2236,6 +2360,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Desco Equipment Corp",
     date: new Date(2017, 10, 9),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 30,
     representative: {
@@ -2254,6 +2379,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Merlin Electric Co",
     date: new Date(2019, 5, 23),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 10,
     representative: {
@@ -2272,6 +2398,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Bailey Cntl Co Div Babcock",
     date: new Date(2019, 3, 2),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 22,
     representative: {
@@ -2290,6 +2417,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ford Brothers Wholesale Inc",
     date: new Date(2017, 2, 18),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 69,
     representative: {
@@ -2308,6 +2436,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Cambridge Inn",
     date: new Date(2020, 5, 12),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 4,
     representative: {
@@ -2326,6 +2455,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Matricciani, Albert J Jr",
     date: new Date(2019, 11, 20),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 11,
     representative: {
@@ -2344,6 +2474,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Nelson Hawaiian Ltd",
     date: new Date(2016, 11, 10),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 41,
     representative: {
@@ -2362,6 +2493,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Neland Travel Agency",
     date: new Date(2016, 7, 11),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 84,
     representative: {
@@ -2380,6 +2512,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Asendorf, J Alan Esq",
     date: new Date(2017, 7, 17),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 22,
     representative: {
@@ -2398,6 +2531,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Silberman, Arthur L Esq",
     date: new Date(2018, 8, 19),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 63,
     representative: {
@@ -2416,6 +2550,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Honey Bee Breeding Genetics &",
     date: new Date(2016, 5, 2),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 47,
     representative: {
@@ -2434,6 +2569,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Wells Kravitz Schnitzer",
     date: new Date(2018, 4, 13),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 62,
     representative: {
@@ -2452,6 +2588,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Prohab Rehabilitation Servs",
     date: new Date(2020, 1, 4),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 55,
     representative: {
@@ -2470,6 +2607,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Eldridge, Kristin K Esq",
     date: new Date(2016, 2, 5),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 3,
     representative: {
@@ -2488,6 +2626,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Vlahos, John J Esq",
     date: new Date(2017, 3, 12),
     status: "proposal",
+    category: "Home",
     verified: false,
     activity: 3,
     representative: {
@@ -2506,6 +2645,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ninas Indian Grs & Videos",
     date: new Date(2019, 3, 27),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 67,
     representative: {
@@ -2524,6 +2664,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Schmid, Gayanne K Esq",
     date: new Date(2019, 8, 6),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 14,
     representative: {
@@ -2542,6 +2683,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Moapa Valley Federal Credit Un",
     date: new Date(2018, 3, 20),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 8,
     representative: {
@@ -2560,6 +2702,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Kentucky Tennessee Clay Co",
     date: new Date(2016, 2, 15),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 17,
     representative: {
@@ -2578,6 +2721,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Admiral Party Rentals & Sales",
     date: new Date(2016, 2, 10),
     status: "proposal",
+    category: "Home",
     verified: false,
     activity: 58,
     representative: {
@@ -2596,6 +2740,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Nelson, Karolyn King Esq",
     date: new Date(2019, 7, 16),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 82,
     representative: {
@@ -2614,6 +2759,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Panasystems",
     date: new Date(2015, 7, 23),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 96,
     representative: {
@@ -2632,6 +2778,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Shank, Edward L Esq",
     date: new Date(2017, 7, 2),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 92,
     representative: {
@@ -2650,6 +2797,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Megibow & Edwards",
     date: new Date(2019, 8, 17),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 18,
     representative: {
@@ -2668,6 +2816,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Benoff, Edward Esq",
     date: new Date(2019, 7, 4),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 9,
     representative: {
@@ -2686,6 +2835,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Woodbridge Free Public Library",
     date: new Date(2020, 3, 14),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 44,
     representative: {
@@ -2704,6 +2854,7 @@ export const CUSTOMERS: Customer[] = [
     company: "New York Life John Thune",
     date: new Date(2018, 4, 3),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 55,
     representative: {
@@ -2722,6 +2873,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Alinabal Inc",
     date: new Date(2017, 3, 4),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 21,
     representative: {
@@ -2740,6 +2892,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Poletto, Kim David Esq",
     date: new Date(2016, 5, 5),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 91,
     representative: {
@@ -2758,6 +2911,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Chang, Carolyn Esq",
     date: new Date(2019, 5, 28),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 30,
     representative: {
@@ -2776,6 +2930,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Silver Bros Inc",
     date: new Date(2016, 8, 19),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 14,
     representative: {
@@ -2794,6 +2949,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Newtec Inc",
     date: new Date(2020, 2, 9),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 77,
     representative: {
@@ -2812,6 +2968,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Creative Business Systems",
     date: new Date(2020, 4, 3),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 58,
     representative: {
@@ -2830,6 +2987,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Dal Tile Corporation",
     date: new Date(2015, 1, 27),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 78,
     representative: {
@@ -2848,6 +3006,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Edward S Katz",
     date: new Date(2018, 8, 6),
     status: "new",
+    category: "Home",
     verified: false,
     activity: 67,
     representative: {
@@ -2866,6 +3025,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Oh My Goodknits Inc",
     date: new Date(2020, 2, 20),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 29,
     representative: {
@@ -2884,6 +3044,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Redeker, Debbie",
     date: new Date(2015, 5, 28),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 13,
     representative: {
@@ -2902,6 +3063,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Desert Sands Motel",
     date: new Date(2016, 9, 5),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 75,
     representative: {
@@ -2920,6 +3082,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Cummins Southern Plains Inc",
     date: new Date(2016, 12, 20),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 1,
     representative: {
@@ -2938,6 +3101,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Lehigh Furn Divsn Lehigh",
     date: new Date(2015, 11, 28),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 13,
     representative: {
@@ -2956,6 +3120,7 @@ export const CUSTOMERS: Customer[] = [
     company: "United Van Lines Agent",
     date: new Date(2018, 11, 11),
     status: "renewal",
+    category: "Home",
     verified: false,
     activity: 73,
     representative: {
@@ -2974,6 +3139,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Capitol Reporters",
     date: new Date(2016, 11, 5),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 76,
     representative: {
@@ -2992,6 +3158,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Kwik Kopy Printing",
     date: new Date(2020, 8, 13),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 60,
     representative: {
@@ -3010,6 +3177,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Centro Inc",
     date: new Date(2015, 7, 6),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 24,
     representative: {
@@ -3028,6 +3196,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Campbell, Jan Esq",
     date: new Date(2020, 2, 25),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 93,
     representative: {
@@ -3046,6 +3215,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Evans, C Kelly Esq",
     date: new Date(2017, 12, 19),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 30,
     representative: {
@@ -3064,6 +3234,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Scat Enterprises",
     date: new Date(2016, 2, 22),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 93,
     representative: {
@@ -3082,6 +3253,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Nagle, Daniel J Esq",
     date: new Date(2016, 12, 24),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 88,
     representative: {
@@ -3100,6 +3272,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Serendiquity Bed & Breakfast",
     date: new Date(2020, 10, 18),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 70,
     representative: {
@@ -3118,6 +3291,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ray Carolyne Realty",
     date: new Date(2018, 2, 12),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 61,
     representative: {
@@ -3136,6 +3310,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Berg, Charles E",
     date: new Date(2018, 6, 10),
     status: "unqualified",
+    category: "Home",
     verified: false,
     activity: 91,
     representative: {
@@ -3154,6 +3329,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ray, Milbern D",
     date: new Date(2017, 4, 11),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 98,
     representative: {
@@ -3172,6 +3348,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Chadds Ford Winery",
     date: new Date(2019, 7, 27),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 97,
     representative: {
@@ -3190,6 +3367,7 @@ export const CUSTOMERS: Customer[] = [
     company: "A R Packaging",
     date: new Date(2020, 4, 23),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 56,
     representative: {
@@ -3208,6 +3386,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Corn Popper",
     date: new Date(2020, 9, 16),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 76,
     representative: {
@@ -3226,6 +3405,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Birite Foodservice Distr",
     date: new Date(2016, 5, 14),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 43,
     representative: {
@@ -3244,6 +3424,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Anchorage Museum Of Hist & Art",
     date: new Date(2018, 6, 22),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 58,
     representative: {
@@ -3262,6 +3443,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Haber, George D Md",
     date: new Date(2018, 10, 25),
     status: "qualified",
+    category: "Home",
     verified: false,
     activity: 72,
     representative: {
@@ -3280,6 +3462,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Royal Pontiac Olds Inc",
     date: new Date(2018, 7, 19),
     status: "proposal",
+    category: "Home",
     verified: false,
     activity: 24,
     representative: {
@@ -3298,6 +3481,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Leonards Antiques Inc",
     date: new Date(2015, 3, 15),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 86,
     representative: {
@@ -3316,6 +3500,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Meca",
     date: new Date(2017, 4, 14),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 15,
     representative: {
@@ -3334,6 +3519,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Nercon Engineering & Mfg Inc",
     date: new Date(2015, 2, 19),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 9,
     representative: {
@@ -3352,6 +3538,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Replica I",
     date: new Date(2016, 3, 25),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 82,
     representative: {
@@ -3370,6 +3557,7 @@ export const CUSTOMERS: Customer[] = [
     company: "20 20 Printing Inc",
     date: new Date(2020, 10, 13),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 13,
     representative: {
@@ -3388,6 +3576,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Publishers Group West",
     date: new Date(2019, 12, 21),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 57,
     representative: {
@@ -3406,6 +3595,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Nischwitz, Jeffrey L Esq",
     date: new Date(2016, 2, 26),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 45,
     representative: {
@@ -3424,6 +3614,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Payne Blades & Wellborn Pa",
     date: new Date(2018, 10, 11),
     status: "new",
+    category: "Home",
     verified: true,
     activity: 64,
     representative: {
@@ -3442,6 +3633,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Coldwell Bnkr Wright Real Est",
     date: new Date(2015, 10, 18),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 74,
     representative: {
@@ -3460,6 +3652,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Computer Repair Service",
     date: new Date(2016, 2, 13),
     status: "proposal",
+    category: "Home",
     verified: false,
     activity: 79,
     representative: {
@@ -3478,6 +3671,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Fleetwood Building Block Inc",
     date: new Date(2018, 3, 8),
     status: "negotiation",
+    category: "Home",
     verified: false,
     activity: 19,
     representative: {
@@ -3496,6 +3690,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Colts Neck Medical Assocs Inc",
     date: new Date(2017, 12, 2),
     status: "negotiation",
+    category: "Home",
     verified: true,
     activity: 11,
     representative: {
@@ -3514,6 +3709,7 @@ export const CUSTOMERS: Customer[] = [
     company: "New England Taxidermy",
     date: new Date(2019, 1, 7),
     status: "proposal",
+    category: "Home",
     verified: true,
     activity: 4,
     representative: {
@@ -3532,6 +3728,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Ludcke, George O Esq",
     date: new Date(2016, 8, 14),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 62,
     representative: {
@@ -3550,6 +3747,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Mccorkle, Tom S Esq",
     date: new Date(2016, 3, 5),
     status: "renewal",
+    category: "Home",
     verified: true,
     activity: 64,
     representative: {
@@ -3568,6 +3766,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Eagle Software Inc",
     date: new Date(2015, 12, 14),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 91,
     representative: {
@@ -3586,6 +3785,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Juvenile & Adult Super",
     date: new Date(2019, 6, 1),
     status: "unqualified",
+    category: "Home",
     verified: true,
     activity: 40,
     representative: {
@@ -3604,6 +3804,7 @@ export const CUSTOMERS: Customer[] = [
     company: "Perez, Joseph J Esq",
     date: new Date(2015, 12, 9),
     status: "qualified",
+    category: "Home",
     verified: true,
     activity: 27,
     representative: {
