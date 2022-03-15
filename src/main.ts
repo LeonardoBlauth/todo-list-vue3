@@ -13,6 +13,14 @@ import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 import "/node_modules/primeflex/primeflex.css";
 
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faMagnifyingGlass);
+library.add(faPlus);
+
 import App from "./App.vue";
 import router from "./router";
 
@@ -24,5 +32,6 @@ app.use(BootstrapVue3);
 app.use(PrimeVue);
 
 app.component("DataTable", DataTable);
+app.component("font-awesome-icon", FontAwesomeIcon);
 
 app.mount("#app");

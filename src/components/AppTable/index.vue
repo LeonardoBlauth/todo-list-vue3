@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { CUSTOMERS } from "@/constatnts";
-</script>
-
-<script lang="ts">
 import { FilterMatchMode, FilterOperator } from "primevue/api";
 import Column from "primevue/column";
 import Calendar from "primevue/calendar";
@@ -10,6 +7,13 @@ import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Dropdown from "primevue/dropdown";
 import TableBadges from "./TableBadges.vue";
+
+window.addEventListener("click", () => {
+  var windowWidth = window.innerWidth;
+});
+</script>
+
+<script lang="ts">
 export default {
   data() {
     return {
@@ -36,7 +40,7 @@ export default {
         },
       },
       loading: true,
-      categories: ["Home", "School", "Helth", "Leisure"],
+      categories: ["Home", "School", "Health", "Leisure"],
       statuses: [
         "unqualified",
         "qualified",
@@ -118,22 +122,36 @@ export default {
       'status',
     ]"
     responsiveLayout="stack"
-    breakpoint="960px"
+    breakpoint="767px"
   >
     <div
       class="flex flex-row justify-content-between align-items-center bg-white mb-3"
     >
       <h5 class="m-0 fw-bold">Tasks</h5>
-      <Button
-        type="button"
-        icon="pi pi-filter-slash"
-        class="p-button-outlined p-button-danger"
-        @click="clearFilter()"
-      />
+      <div class="ms-5">
+        <div class="input-group d-md-none">
+          <span class="input-group-text bg-white border-end-0" id="icon-search">
+            <font-awesome-icon icon="magnifying-glass" />
+          </span>
+          <input
+            type="text"
+            class="form-control border-start-0"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="icon-search"
+          />
+        </div>
+        <Button
+          type="button"
+          class="p-button-outlined p-button-danger d-none d-md-block"
+          @click="clearFilter()"
+          ><i class="pi pi-filter-slash"></i
+        ></Button>
+      </div>
     </div>
     <template #empty> No tasks found. </template>
     <template #loading> Loading tasks data. Please wait. </template>
-    <Column field="name" header="Task" sortable>
+    <Column field="name" header="Task">
       <template #body="{ data }">
         {{ data.name }}
       </template>
