@@ -1,6 +1,9 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
+import axios from "axios";
+import VueAxios from "vue-axios";
+
 import BootstrapVue3 from "bootstrap-vue-3";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
@@ -24,12 +27,15 @@ library.add(faPlus);
 import App from "./App.vue";
 import router from "./router";
 
+axios.defaults.baseURL = 'http://localhost:8000/api/'
+
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
 app.use(BootstrapVue3);
 app.use(PrimeVue);
+app.use(VueAxios, axios);
 
 app.component("DataTable", DataTable);
 app.component("font-awesome-icon", FontAwesomeIcon);

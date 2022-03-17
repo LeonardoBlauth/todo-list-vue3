@@ -7,7 +7,9 @@ const view = useViewStore();
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <RouterLink class="navbar-brand fw-bold" to="/">Todo</RouterLink>
+      <RouterLink class="navbar-brand fw-bold" to="/"
+        ><i class="pi pi-check-circle me-2"></i>Todo List</RouterLink
+      >
       <b-button
         class="navbar-toggler"
         type="button"

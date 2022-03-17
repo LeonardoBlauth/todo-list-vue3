@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import AppButton from "./AppButton.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div
@@ -23,8 +21,8 @@ import AppButton from "./AppButton.vue";
         </div>
         <div class="modal-body">
           <input type="text" />
-          <AppButton class="me-3" label="Edit" color="primary" />
-          <AppButton label="Delete" color="danger" />
+          <button class="me-3" label="Edit" color="primary" />
+          <button label="Delete" color="danger" />
         </div>
         <div class="modal-footer">
           <button

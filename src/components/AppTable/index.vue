@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { CUSTOMERS } from "@/constatnts";
 import { FilterMatchMode, FilterOperator } from "primevue/api";
 import Column from "primevue/column";
 import Calendar from "primevue/calendar";
@@ -7,20 +6,16 @@ import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Dropdown from "primevue/dropdown";
 import TableBadges from "./TableBadges.vue";
-
-window.addEventListener("click", () => {
-  var windowWidth = window.innerWidth;
-});
 </script>
 
 <script lang="ts">
 export default {
   data() {
     return {
-      customers: CUSTOMERS,
+      tasks: [],
       filters: {
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-        name: {
+        task: {
           operator: FilterOperator.AND,
           constraints: [
             { value: null, matchMode: FilterMatchMode.STARTS_WITH },
@@ -30,10 +25,6 @@ export default {
           operator: FilterOperator.AND,
           constraints: [{ value: null, matchMode: FilterMatchMode.DATE_IS }],
         },
-        status: {
-          operator: FilterOperator.OR,
-          constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
-        },
         category: {
           operator: FilterOperator.AND,
           constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
@@ -41,22 +32,26 @@ export default {
       },
       loading: true,
       categories: ["Home", "School", "Health", "Leisure"],
-      statuses: [
-        "unqualified",
-        "qualified",
-        "new",
-        "negotiation",
-        "renewal",
-        "proposal",
-      ],
     };
   },
 
   mounted() {
-    this.loading = false;
+    this.getTasks();
   },
 
   methods: {
+    getTasks() {
+      this.axios
+        .get("tasks")
+        .then(res => {
+          this.tasks = res.data;
+        })
+        .then(() => {
+          console.table(this.tasks);
+          this.loading = false;
+        });
+    },
+
     formatDate(value: Date) {
       return value.toLocaleDateString("en-US", {
         day: "2-digit",
@@ -72,7 +67,7 @@ export default {
     initFilters() {
       this.filters = {
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-        name: {
+        task: {
           operator: FilterOperator.AND,
           constraints: [
             { value: null, matchMode: FilterMatchMode.STARTS_WITH },
@@ -81,10 +76,6 @@ export default {
         date: {
           operator: FilterOperator.AND,
           constraints: [{ value: null, matchMode: FilterMatchMode.DATE_IS }],
-        },
-        status: {
-          operator: FilterOperator.OR,
-          constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }],
         },
         category: {
           operator: FilterOperator.AND,
@@ -102,7 +93,7 @@ export default {
 
 <template>
   <DataTable
-    :value="customers"
+    :value="tasks"
     :paginator="true"
     removableSort
     class="p-datatable-task"
@@ -115,12 +106,7 @@ export default {
     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
     :rowsPerPageOptions="[10, 25, 50]"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    :globalFilterFields="[
-      'name',
-      'country.name',
-      'representative.name',
-      'status',
-    ]"
+    :globalFilterFields="['task', 'category', 'status']"
     responsiveLayout="stack"
     breakpoint="767px"
   >
@@ -143,7 +129,13 @@ export default {
         </div>
         <Button
           type="button"
-          class="p-button-outlined p-button-danger d-none d-md-block"
+          class="p-button-outlined p-button-success d-none d-md-inline"
+          @click="clearFilter()"
+          ><font-awesome-icon icon="plus"
+        /></Button>
+        <Button
+          type="button"
+          class="p-button-outlined p-button-danger d-none d-md-inline ms-3"
           @click="clearFilter()"
           ><i class="pi pi-filter-slash"></i
         ></Button>
@@ -151,9 +143,9 @@ export default {
     </div>
     <template #empty> No tasks found. </template>
     <template #loading> Loading tasks data. Please wait. </template>
-    <Column field="name" header="Task">
+    <Column field="task" header="Task">
       <template #body="{ data }">
-        {{ data.name }}
+        {{ data.task }}
       </template>
       <template #filter="{ filterModel }">
         <InputText
@@ -193,7 +185,7 @@ export default {
       </template>
     </Column>
     <Column
-      field="status"
+      field="status.label"
       header="Status"
       sortable
       :showFilterMatchModes="false"
@@ -202,8 +194,8 @@ export default {
     >
       <template #body="{ data }">
         <TableBadges
-          :badgeClass="'task-badge status-' + data.status"
-          :label="data.status"
+          :badgeClass="'task-badge status-' + data.status.style"
+          :label="data.status.label"
         />
       </template>
       <!-- <template #filter="{ filterModel }">
@@ -237,7 +229,7 @@ export default {
       bodyStyle="text-align: center"
     >
       <template #body="{ data }">
-        {{ formatDate(data.date) }}
+        {{ data.start_date }} - {{ data.end_date }}
       </template>
       <template #filter="{ filterModel }">
         <Calendar
@@ -248,8 +240,8 @@ export default {
       </template>
     </Column>
     <Column
-      field="verified"
-      header="Verified"
+      field="state"
+      header="State"
       dataType="boolean"
       bodyStyle="text-align: center"
     >
@@ -257,11 +249,11 @@ export default {
         <i
           class="pi"
           :class="{
-            'true-icon pi-check-circle': data.verified,
-            'false-icon pi-times-circle': !data.verified,
+            'true-icon pi-check-circle': data.state,
+            'false-icon pi-times-circle': !data.state,
           }"
           :style="{
-            color: verifiedIconColor(data.verified),
+            color: verifiedIconColor(data.state),
           }"
         ></i>
       </template>
